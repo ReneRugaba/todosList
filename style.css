@@ -1,0 +1,15 @@
+li i.fas {
+  margin-inline: 5px;
+  cursor: pointer;
+}
+li i.fa-trash-alt {
+  color: red;
+}
+li i.fa-edit {
+  color: blue;
+}
+li .listInput {
+  border: none;
+}
+
+/*# sourceMappingURL=style.css.map */
