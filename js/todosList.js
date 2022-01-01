@@ -47,21 +47,25 @@ function inputBeforeUpdate(e){
  * @returns HTMLElement
  */
 function createLiElement(textNode){
-    let li=document.createElement('li');
-    const updateLi = document.createElement('i');
-    const deleteLi = document.createElement('i');
-    updateLi.setAttribute('class','fas fa-edit');
-    updateLi.addEventListener('click',inputBeforeUpdate)
-    deleteLi.setAttribute('class','fas fa-trash-alt');
-    deleteLi.addEventListener('click',deleteLiInUl)
-    let input = document.createElement('input');
-    input.value = textNode;
-    input.setAttribute('readonly','readonly');
-    input.setAttribute('class','listInput');
-    li.append(input);
-    li.appendChild(updateLi);
-    li.appendChild(deleteLi);
-    return li;
+    if (textNode) {
+        let li=document.createElement('li');
+        const updateLi = document.createElement('i');
+        const deleteLi = document.createElement('i');
+        updateLi.setAttribute('class','fas fa-edit');
+        updateLi.addEventListener('click',inputBeforeUpdate)
+        deleteLi.setAttribute('class','fas fa-trash-alt');
+        deleteLi.addEventListener('click',deleteLiInUl)
+        let input = document.createElement('input');
+        input.value = textNode;
+        input.setAttribute('readonly','readonly');
+        input.setAttribute('class','listInput');
+        li.append(input);
+        li.appendChild(updateLi);
+        li.appendChild(deleteLi);
+        return li;
+    }else{
+        return false;
+    }
 }
 
 /**
@@ -75,7 +79,9 @@ function execClickEventForm(e){
     let textInput = inputAddLi.value;
     inputAddLi.value="";
     let li = createLiElement(textInput);
-    ul.appendChild(li);
+    if(li){
+        ul.appendChild(li);
+    }
 
 }
 
