@@ -15,7 +15,7 @@ function deleteLiInUl(e){
 }
 
 /**
- * remove focus and add readonly att when user press Enter in li
+ * remove focus and add readonly attribut when user press Enter in li
  * 
  * @param {Event} e 
  */
@@ -37,7 +37,7 @@ function inputBeforeUpdate(e){
     let inputTarget=e.target.parentElement.firstChild;
     inputTarget.removeAttribute('readonly')
     inputTarget.focus();
-    inputTarget.addEventListener("keyup",inputAfterUpdate)
+    inputTarget.addEventListener("keyup",inputAfterUpdate);
 }
 
 /**
@@ -85,5 +85,5 @@ function execClickEventForm(e){
 
 }
 
-buttonSubmitForm.addEventListener('click',execClickEventForm)
+buttonSubmitForm.addEventListener('click',execClickEventForm);
 
